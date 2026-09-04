@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/script.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tech Vault</h1>
+    <!-- Display all technologies -->
+     <div id="technologies-container">
+        <div class="display-button">
+            <a href="{{url_for('add_tech')}}"><button> Add Technology</button></a>
+            <input type="text" id="searchInput" placeholder="Search technologies..." width="100" />
+        </div>
+    
+        <div id="technologyDisplay">
+            <div class="technology">
+                <h3>Technology Name</h3>
+                <div class="card">
+                    <strong>Definition:</strong> <p>Lorem &nbsp; &xlArr;  ipsum dolor sit amet consectetur adipisicing elit. Soluta quasi modi quo ipsa voluptas architecto non quaerat. Consectetur, cumque exercitationem. Dignissimos temporibus ipsa officia tempore neque animi voluptatem aut odio?</p>
+                </div>
+                <div class="card even">
+                    <strong>Category:</strong> <p>Technology category,dddddd</p>
+                </div>
+                <div class="card">
+                    <strong>Example:</strong> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, nam perferendis? Iste, soluta? Dolorum itaque amet et totam? Commodi quaerat vero nihil neque ab molestias, dolore odio iste ipsa unde.</p>
+                </div>
+                <div class="card even">
+                    <strong>Uses:</strong> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae at repellendus, facilis voluptates assumenda eaque facere illo iure? Inventore porro aut voluptatibus excepturi libero eius hic magnam, autem sunt id.</p>
+                </div>
+                <div class="card">
+                    <strong>Notes:</strong> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur deleniti repudiandae, ad distinctio illum rem facere accusantium, nesciunt quis perspiciatis autem nam error quaerat sit ex voluptate expedita! Sunt, fugiat.</p>
+                </div>
+                    <button class="edit-button" onclick="editTechnology()" data-id="2">Edit</button>
+            </div>
+        </div>
+     </div>
+     <!-- Pagination -->
+     <div class="pagination">
+
+        <button
+            id="previousButton"
+            onclick="previousPage()"
+        >
+            Previous
+        </button>
+
+        <span id="pageNumber">
+            Page 1
+        </span>
+
+        <button
+            id="nextButton"
+            onclick="nextPage()"
+        >
+            Next
+        </button>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

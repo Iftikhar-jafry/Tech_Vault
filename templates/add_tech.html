@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/script.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tech Vault</h1>
+    <!-- Add Technology -->
+     <div id="form-container">
+        <h2>Add Technology</h2>
+        <form action="" id="technologyForm">
+            <label>Technology Name</label>
+            <input type="text" id="name" placeholder="e.g Flask" required/>
+
+            <label >Technology Definition</label>
+            <textarea id="definition" placeholder="technolgy definition" rows="3"required></textarea>
+
+            <label>Technology Category</label>
+            <input type="text" id="category" placeholder="e.g category"/>
+
+            <label >Technology Example</label>
+            <textarea id="example" placeholder="technology example" rows="3"></textarea>
+
+            <label >Technology Uses</label>
+            <textarea id="use" placeholder="technology uses" rows="3"></textarea>
+
+            <label >Technology Notes</label>
+            <textarea id="notes" placeholder="technology notes" rows="3"></textarea>
+
+            <div class="form-button">
+                <a href="{{url_for('home')}}"><button type="button"> ← Cancel</button></a>
+                <button type="submit" id="submitBtn">Add Technology</button>
+            </div>
+        </form>
+     </div>
+         <script src="{{ url_for('static', filename='js/add_tech.js') }}"></script>
+</body>
+</html>
