@@ -119,7 +119,7 @@ function displayTechnologies(technologies) {
             }
             
 
-           html+=` 
+           html+=` <span class="button-container">
             <button
                 class="edit-button"
                 type="button"
@@ -128,6 +128,15 @@ function displayTechnologies(technologies) {
             >
                 Edit
             </button>
+            <button
+                class="delete-button"
+                type="button"
+                data-id="${tech.id}"
+                onclick="deleteTechnology(this)"
+            >
+                Delete
+            </button>
+            </span>
         `;
         technologyDiv.innerHTML = html;
 
@@ -190,6 +199,37 @@ function editTechnology(button) {
     console.log("Technology ID:", id);
 
     window.location.href = `update-tech/${id}`;
+}
+
+
+// ===============================
+// Delete technology
+// ===============================
+function deleteTechnology(button) {
+
+    const id = button.dataset.id;
+
+    console.log("Technology ID:", id);
+
+    if (confirm("Are you sure you want to delete this technology?")) {
+
+        fetch(`/technologies/${id}`, {
+            method: "DELETE"
+        })
+        .then(response => {
+            if (response.ok) {
+                // Remove the technology card from the DOM
+                const technologyDiv = button.closest(".technology");
+                technologyDiv.remove();
+            } else {
+                console.error("Failed to delete technology");
+            }
+        })
+        .catch(error => {
+            console.error("Error deleting technology:", error);
+        });
+
+    }
 }
 
 

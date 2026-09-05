@@ -53,21 +53,26 @@ body {
             display:block;
         }
         .card{
-            border: 1px solid #c99393;
-            background: #e0c5cb;
+            /* border: 1px solid #c99393; */
+            background: #91b4d1;
             color:black;
             padding: 10px;
-            margin-bottom: 10px;
+            /* margin-bottom: 1px; */
             border-radius: 8px;
             display:block;
         }
-        .even{
+        /* .even{
             background:rgb(187, 214, 194);
             color:black;
+        } */
+        .button-container
+        {
+            display: flex;
+            justify-content: space-around;
         }
         .edit-button {
             background-color: #4CAF50;
-            width: 100%;
+            width: 45%;
             height: 40px;
             color: white;
             font-size: 20px;
@@ -77,6 +82,21 @@ body {
             cursor: pointer;
             border-radius: 4px;
         }
+
+
+        .delete-button {
+            background-color: #f44336;
+            width: 45%;
+            height: 40px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
         #searchInput{
             width: 20%;    
         }

@@ -173,6 +173,20 @@ def update_technology(id):
         }
     ),201
 
+# ===============================
+# Delete Technology
+# ===============================
+@app.route("/technologies/<int:id>", methods=["DELETE"])
+def delete_technology(id):
+    tech = Technology.query.get_or_404(id)
+    db.session.delete(tech)
+    db.session.commit()
+
+    return jsonify(
+        {
+            "message":"Technology Delete Successfully"
+        }
+    ),200
 
 
 
